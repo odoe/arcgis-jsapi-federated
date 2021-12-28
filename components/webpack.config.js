@@ -1,11 +1,10 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const webpack = require('webpack');
 
 const deps = require('./package.json').dependencies;
 
-module.exports = (env, arg) => {
+module.exports = (_, arg) => {
     const config = {
         entry: ['./src/index.js'],
         output: {
@@ -41,7 +40,6 @@ module.exports = (env, arg) => {
                     '@arcgis/core': { singleton: true }
                 },
             }),
-            new HtmlWebpackPlugin(),
         ]
     };
 

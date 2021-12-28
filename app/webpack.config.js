@@ -3,7 +3,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const path = require("path");
 const deps = require("./package.json").dependencies;
 
-module.exports = function () {
+module.exports = function (_, arg) {
   const config = {
     entry: "./src/index",
     output: {
@@ -12,7 +12,7 @@ module.exports = function () {
       publicPath: 'http://localhost:3002/',
       clean: true
     },
-    mode: "development",
+    mode: arg.mode,
     devServer: {
       port: 3002,
       headers: {
