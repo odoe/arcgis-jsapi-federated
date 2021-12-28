@@ -1,0 +1,20 @@
+{
+  "name": "jsapi-webpack-federated",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app1": "npm start --prefix app",
+    "app2": "npm start  --prefix components",
+    "app1:build": "npm run build --prefix app",
+    "app2:build": "npm run build --prefix components",
+    "app1:serve": "npm run serve --prefix app",
+    "app2:serve": "npm run serve --prefix components",
+    "start": "npm run app1 & npm run app2",
+    "build": "npm run app1:build & npm run app2:build",
+    "serve": "npm run app1:serve & npm run app2:serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
